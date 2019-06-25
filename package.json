@@ -1,0 +1,56 @@
+{
+  "name": "nest-rest",
+  "version": "1.0.0",
+  "description": "nest rest api.",
+  "repository": "https://github.com/AlfieriChou/nest-rest",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "start": "ts-node src/main",
+    "prestart:prod": "npm run build",
+    "start:prod": "node dist/main.js",
+    "format": "prettier --write \"**/*.{ts,js,json}\"",
+    "commit": "git-cz",
+    "release": "standard-version"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "author": "AlfieriChou <alfierichou@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@nestjs/common": "6.3.2",
+    "@nestjs/core": "6.3.2",
+    "@nestjs/platform-express": "6.3.2",
+    "@nestjs/swagger": "3.0.2",
+    "class-transformer": "0.2.3",
+    "class-validator": "0.9.1",
+    "reflect-metadata": "0.1.13",
+    "swagger-ui-express": "4.0.6",
+    "typescript": "3.5.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "8.0.0",
+    "@commitlint/config-conventional": "8.0.0",
+    "@types/node": "12.0.10",
+    "commitizen": "3.1.1",
+    "cz-conventional-changelog": "2.1.0",
+    "husky": "2.5.0",
+    "prettier": "1.18.2",
+    "pretty-quick": "1.11.1",
+    "standard-version": "6.0.1",
+    "supertest": "4.0.2",
+    "ts-node": "8.3.0",
+    "tslint": "5.18.0",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-plugin-prettier": "2.0.1"
+  }
+}
