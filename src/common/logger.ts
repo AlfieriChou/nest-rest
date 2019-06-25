@@ -4,7 +4,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 const env: string = process.env.NODE_ENV || 'development'
-const logDir: string = path.resolve(__dirname, '../logs')
+const logDir: string = path.resolve(__dirname, '../../logs')
 if (!fs.existsSync(logDir)) {
   fs.mkdirSync(logDir)
 }
