@@ -35,7 +35,9 @@
     "class-validator": "0.9.1",
     "reflect-metadata": "0.1.13",
     "swagger-ui-express": "4.0.6",
-    "typescript": "3.5.2"
+    "typescript": "3.5.2",
+    "winston": "3.2.1",
+    "winston-daily-rotate-file": "3.9.0"
   },
   "devDependencies": {
     "@commitlint/cli": "8.0.0",
