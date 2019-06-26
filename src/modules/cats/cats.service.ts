@@ -1,15 +1,25 @@
-import { Injectable } from '@nestjs/common'
-import { Cat } from './interfaces/cats.interface'
+import { Injectable, Inject } from '@nestjs/common'
+import { ICat } from './interfaces/cats.interface'
+import { Cat } from './cats.entity'
+import { CreateCatDto } from './dto/create-cat.dto'
 
 @Injectable()
 export class CatsService {
-  private readonly cats: Cat[] = []
+  constructor(
+    @Inject('CatsRepository')
+    private readonly catsRepository: typeof Cat
+  ) {}
+  private readonly cats: ICat[] = []
 
-  create(cat: Cat) {
-    this.cats.push(cat)
+  async create(params: CreateCatDto): Promise<Cat> {
+    const cat = new Cat()
+    cat.name = params.name
+    cat.age = params.age
+    cat.breed = params.breed
+    return await cat.save()
   }
 
-  findOne(id: number): Cat {
+  findOne(id: number): ICat {
     return this.cats[id]
   }
 }

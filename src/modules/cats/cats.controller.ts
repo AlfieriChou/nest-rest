@@ -7,7 +7,7 @@ import {
 } from '@nestjs/swagger'
 import { CatsService } from './cats.service'
 import { CreateCatDto } from './dto/create-cat.dto'
-import { Cat } from './interfaces/cats.interface'
+import { ICat } from './interfaces/cats.interface'
 import { ResponseCatDto } from './dto/response-cat.dto'
 
 @ApiBearerAuth()
@@ -34,7 +34,7 @@ export class CatsController {
     description: 'Show the record.',
     type: ResponseCatDto
   })
-  findOne(@Param('id') id: string): Cat {
+  findOne(@Param('id') id: string): ICat {
     return this.catsService.findOne(+id)
   }
 }
