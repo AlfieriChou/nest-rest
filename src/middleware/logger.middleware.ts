@@ -1,4 +1,4 @@
-import { logger } from "../common/logger"
+import { logger } from '../common/logger'
 import { Request, Response } from 'express'
 import * as moment from 'moment'
 import * as _ from 'lodash'
