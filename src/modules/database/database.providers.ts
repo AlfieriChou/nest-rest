@@ -1,5 +1,5 @@
 import { Sequelize, ISequelizeConfig } from 'sequelize-typescript'
-import { Cat } from '../cats/cats.entity'
+import { Cat } from '../workModules/cats/cats.entity'
 import { ConfigService } from '../shared/config/config.service'
 
 let configService: ConfigService = new ConfigService()
