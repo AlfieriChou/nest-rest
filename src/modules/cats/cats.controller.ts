@@ -25,7 +25,7 @@ export class CatsController {
   })
   @ApiResponse({ status: 403, description: 'Forbidden.' })
   async create(@Body() createCatDto: CreateCatDto) {
-    this.catsService.create(createCatDto)
+    return this.catsService.create(createCatDto)
   }
 
   @Get(':id')

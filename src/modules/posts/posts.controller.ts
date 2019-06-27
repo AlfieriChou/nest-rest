@@ -25,7 +25,7 @@ export class PostsController {
   })
   @ApiResponse({ status: 403, description: 'Forbidden.' })
   async create(@Body() createPostDto: CreatePostDto) {
-    this.postsService.create(createPostDto)
+    return this.postsService.create(createPostDto)
   }
 
   @Get()
