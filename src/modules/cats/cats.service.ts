@@ -2,6 +2,7 @@ import { Injectable, Inject } from '@nestjs/common'
 import { ICat } from './interfaces/cats.interface'
 import { Cat } from './cats.entity'
 import { CreateCatDto } from './dto/create-cat.dto'
+import { ResponseCatDto } from './dto/response-cat.dto'
 
 @Injectable()
 export class CatsService {
@@ -11,7 +12,7 @@ export class CatsService {
   ) {}
   private readonly cats: ICat[] = []
 
-  async create(params: CreateCatDto): Promise<Cat> {
+  async create(params: CreateCatDto): Promise<ResponseCatDto> {
     const cat = new Cat()
     cat.name = params.name
     cat.age = params.age

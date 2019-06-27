@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common'
-import { SequelizeOrmConfig } from './interfaces/sequelize-orm-config.interface'
 import { config } from '../../../config/config'
+import { ISequelizeConfig } from 'sequelize-typescript'
 
 @Injectable()
 export class ConfigService {
-  get sequelizeOrmConfig(): SequelizeOrmConfig {
+  get sequelizeOrmConfig(): ISequelizeConfig {
     return config.database
   }
 }

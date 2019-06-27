@@ -1,6 +1,7 @@
-export const config = {
+import { Config } from './interfaces/config.interface'
+
+export const config: Config = {
   database: {
-    operatorsAliases: false,
     dialect: 'mysql',
     host: 'localhost',
     port: 3306,

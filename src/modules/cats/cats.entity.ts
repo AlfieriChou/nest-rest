@@ -12,9 +12,7 @@ import {
   IsNumeric
 } from 'sequelize-typescript'
 
-@Table({
-  tableName: 'cats'
-})
+@Table
 export class Cat extends Model<Cat> {
   @PrimaryKey
   @AutoIncrement
