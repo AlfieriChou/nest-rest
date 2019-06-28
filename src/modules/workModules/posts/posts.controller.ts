@@ -6,7 +6,7 @@ import {
   ApiUseTags
 } from '@nestjs/swagger'
 import { IPost } from './interfaces/posts.interface'
-import { ResponsePostDto } from './dto/response-post.dto'
+import { PostDto } from './dto/post.dto'
 import { PostsService } from './posts.service'
 import { CreatePostDto } from './dto/create-post.dto'
 
@@ -21,7 +21,7 @@ export class PostsController {
   @ApiResponse({
     status: 200,
     description: 'The record has been successfully created.',
-    type: ResponsePostDto
+    type: PostDto
   })
   @ApiResponse({ status: 403, description: 'Forbidden.' })
   async create(@Body() createPostDto: CreatePostDto) {
@@ -32,7 +32,7 @@ export class PostsController {
   @ApiResponse({
     status: 200,
     description: 'Show the record.',
-    type: ResponsePostDto
+    type: PostDto
   })
   async findAll(): Promise<IPost[]> {
     return this.postsService.findAll()

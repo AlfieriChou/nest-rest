@@ -8,5 +8,6 @@ export const config: Config = {
     username: 'root',
     password: 'alfieri',
     database: 'test'
-  }
+  },
+  jwtPrivateKey: 'nest'
 }

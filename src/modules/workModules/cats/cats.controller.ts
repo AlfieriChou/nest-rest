@@ -8,7 +8,7 @@ import {
 import { CatsService } from './cats.service'
 import { CreateCatDto } from './dto/create-cat.dto'
 import { ICat } from './interfaces/cats.interface'
-import { ResponseCatDto } from './dto/response-cat.dto'
+import { CatDto } from './dto/cat.dto'
 
 @ApiBearerAuth()
 @ApiUseTags('cats')
@@ -21,7 +21,7 @@ export class CatsController {
   @ApiResponse({
     status: 200,
     description: 'The record has been successfully created.',
-    type: ResponseCatDto
+    type: CatDto
   })
   @ApiResponse({ status: 403, description: 'Forbidden.' })
   async create(@Body() createCatDto: CreateCatDto) {
@@ -32,7 +32,7 @@ export class CatsController {
   @ApiResponse({
     status: 200,
     description: 'Show the record.',
-    type: ResponseCatDto
+    type: CatDto
   })
   findOne(@Param('id') id: string): ICat {
     return this.catsService.findOne(+id)

@@ -1,24 +1,24 @@
 import { ApiModelProperty } from '@nestjs/swagger'
 
-export class ResponsePostDto {
+export class CatDto {
   @ApiModelProperty({
     type: String,
     required: false,
-    description: 'user id'
+    description: 'name'
   })
-  readonly userId: string
+  readonly name: string
 
   @ApiModelProperty({
     type: Number,
     required: false,
-    description: 'title'
+    description: 'age'
   })
-  readonly title: number
+  readonly age: number
 
   @ApiModelProperty({
     type: String,
     required: false,
-    description: 'context'
+    description: 'breed'
   })
-  readonly context: string
+  readonly breed: string
 }
