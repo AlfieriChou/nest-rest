@@ -7,7 +7,6 @@ import {
   MinLength
 } from 'class-validator'
 import { ApiModelProperty } from '@nestjs/swagger'
-import { Gender } from '../enum/gender'
 
 export class CreateUserDto {
   @ApiModelProperty()
@@ -18,22 +17,4 @@ export class CreateUserDto {
   @IsString()
   @MinLength(6)
   readonly password: string
-
-  @ApiModelProperty()
-  @IsString()
-  readonly firstName: string
-
-  @ApiModelProperty()
-  @IsString()
-  readonly lastName: string
-
-  @ApiModelProperty()
-  @IsOptional()
-  @IsEnum(Gender)
-  readonly gender: Gender
-
-  @ApiModelProperty()
-  @IsOptional()
-  @IsISO8601()
-  readonly birthday: string
 }
