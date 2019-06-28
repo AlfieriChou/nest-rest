@@ -1,6 +1,6 @@
 import { Injectable, Inject, HttpException, HttpStatus } from '@nestjs/common'
 import { User } from './user.entity'
-import { genSalt, hash, compare } from 'bcrypt'
+import { hash, compare } from 'bcrypt'
 import { UserLoginRequestDto } from './dto/user-login-request.dto'
 import { CreateUserDto } from './dto/create-user.dto'
 import { UserLoginResponseDto } from './dto/user-login-response.dto'
@@ -71,11 +71,15 @@ export class UsersService {
   }
 
   async signToken(user: User): Promise<string> {
+    let created_at: Date = new Date()
+    created_at.setDate(created_at.getDate() + 30)
+    let timeStamp: number = Date.parse(created_at.toString())
     const payload: JwtPayload = {
-      email: user.email
+      email: user.email,
+      exp: timeStamp
     }
 
-    const token = sign(payload, this.jwtPrivateKey, {})
+    const token = sign(payload, this.jwtPrivateKey)
     return token
   }
 }
