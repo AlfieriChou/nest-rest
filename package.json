@@ -28,7 +28,7 @@
   "private": true,
   "dependencies": {
     "@nestjs/common": "6.3.2",
-    "@nestjs/core": "6.3.2",
+    "@nestjs/core": "9.0.5",
     "@nestjs/jwt": "6.1.1",
     "@nestjs/mongoose": "6.1.2",
     "@nestjs/passport": "6.1.0",
